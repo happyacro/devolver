@@ -59,9 +59,54 @@ You're going to execute something like this in a terminal window from `${STUPID_
 
 	./cdevolver.sh [RETDEC_API_KEY] [ITERATION_COUNT] [C_FILE_NAME]
 
+Here `ITERATION_COUNT` is how many times you want to compile/decompile the code as it gets progressively worse, `RET_DEC_API_KEY` is your RetDec API key, and unsurprisingly `C_FILE_NAME` is the name of, you guessed it, your input C file.
+
 Example:
 
 	./cdevolver.sh SOME_RANDOM_KEY_XYZ 35 yourfile.c
+
+# jdevolver
+
+```js
+
+	/* 
+		IMPORTANT NOTE: This script doesn't seem to work, the images degrade a very tiny amount within the first 10 iterations, but no further.
+		
+		If you figure out a ImageMagick trick that I haven't, lmk. 
+
+		I have tried:
+
+			* Converting the files to an intermediary format such as BMP that doesn't create compression, in an attempt to trick ImageMagick into recompressing again.
+
+			* Scaling to 10%, then 1000%.
+
+			* Adding random noise very slightly.
+
+			* Adding a very slight gaussian blur.
+
+			* Very low quality levels (like, 5).
+	*/
+
+```
+
+
+jdevolver makes use of [ImageMagick](https://www.imagemagick.org/script/index.php), so install that. You can easily install it with [Homebrew](https://brew.sh/) on OSX. 
+
+You will also need to install [FFmpeg](https://www.ffmpeg.org/), which can also be obtained for OSX simply with [Homebrew](https://brew.sh/).
+
+If you don't have bash installed on your system (windows users..), go get and install [Cygwin](http://im.snibgo.com/cygwin.htm).
+
+Note that the script is going to create a bunch of jpeg files in the same directory as the original, so I recommend making a temp directory and copying your original there.
+
+Running the script is easy: 
+
+	./jdevolver.sh [YOUR_IMAGE_FILE] [ITERATION_COUNT] [QUALITY]
+
+Here `ITERATION_COUNT` is how many times you want to run the converter, and `QUALITY` is a number from 1 to 100 signifying JPEG compression quality level. It's fun to peg this at 100 and still see the images degrade over time. 
+
+Example: 
+
+	./jdevolver.sh temp/happyacrologo.jpg 30 100
 
 # purpose
 
