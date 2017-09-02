@@ -69,9 +69,9 @@ Example:
 
 ```js
 
-'IMPORTANT NOTE': 
+'IMPORTANT NOTE: 
 
-/*
+'/*
 This script doesn't seem to work, the images degrade a very tiny amount within the first 10 iterations, but no further.
 
 If you figure out a ImageMagick trick that I haven't, lmk. 
