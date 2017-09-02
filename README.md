@@ -69,23 +69,21 @@ Example:
 
 ```js
 
-	/* 
-		IMPORTANT NOTE: This script doesn't seem to work, the images degrade a very tiny amount within the first 10 iterations, but no further.
-		
-		If you figure out a ImageMagick trick that I haven't, lmk. 
+IMPORTANT NOTE: This script doesn't seem to work, the images degrade a very tiny amount within the first 10 iterations, but no further.
 
-		I have tried:
+If you figure out a ImageMagick trick that I haven't, lmk. 
 
-			* Converting the files to an intermediary format such as BMP that doesn't create compression, in an attempt to trick ImageMagick into recompressing again.
+I have tried:
 
-			* Scaling to 10%, then 1000%.
+	* Converting the files to an intermediary format such as BMP that doesn't create compression, in an attempt to trick ImageMagick into recompressing again.
 
-			* Adding random noise very slightly.
+	* Scaling to 10%, then 1000%.
 
-			* Adding a very slight gaussian blur.
+	* Adding random noise very slightly.
 
-			* Very low quality levels (like, 5).
-	*/
+	* Adding a very slight gaussian blur.
+
+	* Very low quality levels (like, 5).
 
 ```
 
