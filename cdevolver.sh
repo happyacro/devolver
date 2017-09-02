@@ -105,7 +105,7 @@ while [  ${COUNTER} -lt ${ITERATION_COUNT} ]; do
 	do_the_magic "${CURRENT_FILE}" "${OUTPUT_FILE}"	
 	CURRENT_FILE="${OUTPUT_FILE}"
 	let COUNTER=COUNTER+1
-	echo "Finished iteration #${COUNER}, sleeping for 60s"
+	echo "Finished iteration #${COUNTER}, sleeping for 60s"
 	echo ""
 	sleep 60 
 done
