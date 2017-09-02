@@ -69,7 +69,10 @@ Example:
 
 ```js
 
-IMPORTANT NOTE: This script doesn't seem to work, the images degrade a very tiny amount within the first 10 iterations, but no further.
+'IMPORTANT NOTE': 
+
+/*
+This script doesn't seem to work, the images degrade a very tiny amount within the first 10 iterations, but no further.
 
 If you figure out a ImageMagick trick that I haven't, lmk. 
 
@@ -85,8 +88,9 @@ I have tried:
 
 	* Very low quality levels (like, 5).
 
-```
+*/
 
+```
 
 jdevolver makes use of [ImageMagick](https://www.imagemagick.org/script/index.php), so install that. You can easily install it with [Homebrew](https://brew.sh/) on OSX. 
 
