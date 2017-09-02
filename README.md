@@ -17,15 +17,15 @@ Usage Instructions:
 
 cdevolver.sh requires a free api-key from [Retargetable Decompiler](https://retdec.com/) (aka RetDec), because cdevolver uses their service for decompilation. Check the RetDec website out, even if you won't be using their web service. You can upload and decompile your C binary within your browser for free without registering or acquiring an api key.
 
+P.S. There are a bunch of other freeware and commercial disassemblers and decompilers out there that work on a variety of platforms. RetDec was the first decompiler I found that spit out recompilable code reliably over multiple generations (although my simple hello world c file seg faults after the first recompilation..). There's a great list of decompilers and disassemblers [here](https://en.wikibooks.org/wiki/X86_Disassembly/Disassemblers_and_Decompilers). 
+
 ### STEP 2: Download retdec-sh
 
 cdevolver.sh also makes use of a third-party bash script to call RetDec's decompliation web service, so go download [retdec-sh](https://github.com/s3rvac/retdec-sh). There are a number of other clients for the RetDec api in a variety of languages. Check those out [here](https://retdec.com/api/).
 
-P.S. There are a bunch of other freeware and commercial disassemblers and decompilers out there that work on a variety of platforms. RetDec was the first decompiler I found that spit out recompilable code reliably over multiple generations (although my simple hello world c file seg faults after the first recompilation..). There's a great list of decompilers and disassemblers [here](https://en.wikibooks.org/wiki/X86_Disassembly/Disassemblers_and_Decompilers). 
-
 ### STEP 3: Download devolver
 
-Devolver can be acquired from [here](.). 
+Devolver can be acquired from [here](https://github.com/happyacro/devolver). 
 
 ### STEP 4: Put everything in place
 
