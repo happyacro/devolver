@@ -1,0 +1,94 @@
+Welcome to cdevolver, why are you doing this?
+
+API Key: 79b76872-5d01-47f9-9482-1507ed5daaa6
+Iteration Count: 100
+Input file: happyacro.c
+
+Running iteration #0, current file: happyacro.c, output file: happyacro0.c
+happyacro.c is 77 bytes and 5 lines.
+Compiling happyacro.c to happyacro0
+Attempting to run happyacro0
+HAPPY:/ACRO
+Calling RetDec (http://www.retdec.com) to decompile happyacro0
+happyacro0 was decompiled to happyacro0.c
+happyacro0.c is 1226 bytes and 48 lines.
+Finished iteration #1, sleeping for 60s
+
+Running iteration #1, current file: happyacro0.c, output file: happyacro1.c
+happyacro0.c is 1226 bytes and 48 lines.
+Compiling happyacro0.c to happyacro1
+Attempting to run happyacro1
+Calling RetDec (http://www.retdec.com) to decompile happyacro1
+happyacro1 was decompiled to happyacro1.c
+happyacro1.c is 2466 bytes and 80 lines.
+Finished iteration #2, sleeping for 60s
+
+Running iteration #2, current file: happyacro1.c, output file: happyacro2.c
+happyacro1.c is 2466 bytes and 80 lines.
+Compiling happyacro1.c to happyacro2
+Attempting to run happyacro2
+Calling RetDec (http://www.retdec.com) to decompile happyacro2
+happyacro2 was decompiled to happyacro2.c
+happyacro2.c is 6057 bytes and 162 lines.
+Finished iteration #3, sleeping for 60s
+
+Running iteration #3, current file: happyacro2.c, output file: happyacro3.c
+happyacro2.c is 6057 bytes and 162 lines.
+Compiling happyacro2.c to happyacro3
+Attempting to run happyacro3
+Calling RetDec (http://www.retdec.com) to decompile happyacro3
+happyacro3 was decompiled to happyacro3.c
+happyacro3.c is 16240 bytes and 380 lines.
+Finished iteration #4, sleeping for 60s
+
+Running iteration #4, current file: happyacro3.c, output file: happyacro4.c
+happyacro3.c is 16240 bytes and 380 lines.
+Compiling happyacro3.c to happyacro4
+Attempting to run happyacro4
+Calling RetDec (http://www.retdec.com) to decompile happyacro4
+happyacro4 was decompiled to happyacro4.c
+happyacro4.c is 43499 bytes and 943 lines.
+Finished iteration #5, sleeping for 60s
+
+Running iteration #5, current file: happyacro4.c, output file: happyacro5.c
+happyacro4.c is 43499 bytes and 943 lines.
+Compiling happyacro4.c to happyacro5
+Attempting to run happyacro5
+Calling RetDec (http://www.retdec.com) to decompile happyacro5
+happyacro5 was decompiled to happyacro5.c
+happyacro5.c is 113252 bytes and 2320 lines.
+Finished iteration #6, sleeping for 60s
+
+Running iteration #6, current file: happyacro5.c, output file: happyacro6.c
+happyacro5.c is 113252 bytes and 2320 lines.
+Compiling happyacro5.c to happyacro6
+Attempting to run happyacro6
+Calling RetDec (http://www.retdec.com) to decompile happyacro6
+happyacro6 was decompiled to happyacro6.c
+happyacro6.c is 285809 bytes and 5604 lines.
+Finished iteration #7, sleeping for 60s
+
+Running iteration #7, current file: happyacro6.c, output file: happyacro7.c
+happyacro6.c is 285809 bytes and 5604 lines.
+Compiling happyacro6.c to happyacro7
+Attempting to run happyacro7
+Calling RetDec (http://www.retdec.com) to decompile happyacro7
+happyacro7 was decompiled to happyacro7.c
+happyacro7.c is 733790 bytes and 14073 lines.
+Finished iteration #8, sleeping for 60s
+
+Running iteration #8, current file: happyacro7.c, output file: happyacro8.c
+happyacro7.c is 733790 bytes and 14073 lines.
+Compiling happyacro7.c to happyacro8
+Attempting to run happyacro8
+Calling RetDec (http://www.retdec.com) to decompile happyacro8
+happyacro8 was decompiled to happyacro8.c
+happyacro8.c is 1929998 bytes and 36538 lines.
+Finished iteration #9, sleeping for 60s
+
+Running iteration #9, current file: happyacro8.c, output file: happyacro9.c
+happyacro8.c is 1929998 bytes and 36538 lines.
+Compiling happyacro8.c to happyacro9
+Attempting to run happyacro9
+Calling RetDec (http://www.retdec.com) to decompile happyacro9
+Strange, decompile script didn't exit with error, but expected output file 'happyacro9.c' doesn't exist? Stopping.
