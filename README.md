@@ -23,7 +23,7 @@ P.S. There are a bunch of other freeware and commercial disassemblers and decomp
 
 cdevolver.sh also makes use of a third-party bash script to call RetDec's decompliation web service, so go download [retdec-sh](https://github.com/s3rvac/retdec-sh). There are a number of other clients for the RetDec api in a variety of languages. Check those out [here](https://retdec.com/api/).
 
-### STEP 3: Download devolver
+### STEP 3: Download cdevolver
 
 Devolver can be acquired from [here](https://github.com/happyacro/devolver). 
 

@@ -46,7 +46,11 @@ if [ -z "${1}" -o -z "${2}" -o -z "${3}" ]; then
 	exit 1
 fi
 
-echo "Welcome to cdevolver, why are you doing this?"
+echo "Welcome to cdevolver. This is a terrible idea. Why are you doing this?"
+echo ""
+echo "This script is from here: https://github.com/happyacro/devolver"
+echo ""
+echo "The script was written to generate a joke for a book called HAPPY:/ACRO."
 echo ""
 echo "API Key: ${API_KEY}"
 echo "Iteration Count: ${ITERATION_COUNT}"

@@ -48,6 +48,10 @@ fi
 
 echo "Welcome to jdevolver. This is a terrible idea. Why are you doing this?"
 echo ""
+echo "This script is from here: https://github.com/happyacro/devolver"
+echo ""
+echo "The script was written to generate a joke for a book called HAPPY:/ACRO."
+echo ""
 echo "Input file: ${JPG_FILE}"
 echo "Iteration Count: ${ITERATION_COUNT}"
 echo ""
