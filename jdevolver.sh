@@ -41,40 +41,44 @@ JPG_FILE=${1}
 ITERATION_COUNT=${2}
 QUALITY=${3}
 
-if [ -z "${1}" -o -z "${2}" -o -z "${3}" ]; then
-	echo "USAGE: ${0} [JPEG FILE] [ITERATION COUNT] [QUALITY]"
-	echo ""
-	echo "Quality should be between 1 and 100, 100 indicating best."
+if [ -z "${1}" -o -z "${2}" ]; then
+	echo "USAGE: ${0} [JPEG FILE] [ITERATION COUNT] "
 	exit 1
 fi
 
-echo "Welcome to jdevolver, why are you doing this?"
+echo "Welcome to jdevolver. This is a terrible idea. Why are you doing this?"
 echo ""
 echo "Input file: ${JPG_FILE}"
 echo "Iteration Count: ${ITERATION_COUNT}"
-echo "Quality: ${QUALITY}"
 echo ""
-
-function report_on_file() {
-	FILE="${1}"
-	FILE_SIZE=`cat "${FILE}" | wc -c | sed 's/.*[^\0-9]//'`
-	echo "${FILE} is ${FILE_SIZE} bytes."
-}
 
 function do_the_magic() {
 	INPUT_FILE="${1}"
 	OUTPUT_FILE="${2}"
 
-	report_on_file "${INPUT_FILE}"
-
-	echo "Converting ${INPUT_FILE} to ${OUTPUT_FILE}"
-	convert -quality ${QUALITY} "${INPUT_FILE}" "${OUTPUT_FILE}"
-
+	convert -quality 100 "${INPUT_FILE}" "${OUTPUT_FILE}.tmp"
+	mv "${OUTPUT_FILE}.tmp" "${OUTPUT_FILE}"
 	ERROR_CODE=${?}
 	if [ 1 = ${ERROR_CODE} ]; then
 		echo "imagemagick exited with an error code of ${?}, stopping."
 		exit 1
 	fi
+
+	LOOPCOUNTER=0
+	while [ ${LOOPCOUNTER} -lt 10 ]; do
+		CURRENTQUALITY=$((50 + RANDOM % 30))
+		echo -n "${LOOPCOUNTER} "
+		convert -quality ${CURRENTQUALITY} "${OUTPUT_FILE}" "${OUTPUT_FILE}.tmp"
+		mv "${OUTPUT_FILE}.tmp" "${OUTPUT_FILE}"
+		ERROR_CODE=${?}
+		if [ 1 = ${ERROR_CODE} ]; then
+			echo "imagemagick exited with an error code of ${?}, stopping."
+			exit 1
+		fi
+		let LOOPCOUNTER=LOOPCOUNTER+1
+	done
+
+	echo ""	
 
 	report_on_file "${OUTPUT_FILE}"		
 }
@@ -82,13 +86,12 @@ function do_the_magic() {
 COUNTER=0
 CURRENT_FILE="${JPG_FILE}"
 while [  ${COUNTER} -lt ${ITERATION_COUNT} ]; do
-	OUTPUT_FILE="`basename ${JPG_FILE} .jpg`${COUNTER}.jpg"	
+	let FILE_COUNTER=COUNTER+100000
+	OUTPUT_FILE="`basename ${JPG_FILE} .jpg`${FILE_COUNTER}.jpg"	
 	echo "Running iteration #${COUNTER}, current file: ${CURRENT_FILE}, output file: ${OUTPUT_FILE}"
 	do_the_magic "${CURRENT_FILE}" "${OUTPUT_FILE}"	
 	CURRENT_FILE="${OUTPUT_FILE}"
 	let COUNTER=COUNTER+1
-	echo "Finished iteration #${COUNTER}"	
-	echo ""
 done
 
 echo "Final file: ${OUTPUT_FILE}"
@@ -96,6 +99,22 @@ echo ""
 
 echo "Creating movie file: out.mp4"
 
-ffmpeg -framerate 30 -pattern_type glob -i '*.jpg' -c:v libx264 -r 30 -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" out.mp4
+rm out30.mp4
+rm out60.mp4
+rm out120.mp4
+
+ffmpeg -framerate 30 -pattern_type glob -i '*.jpg' -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" out30.mp4
+ffmpeg -framerate 60 -pattern_type glob -i '*.jpg' -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" out60.mp4
+ffmpeg -framerate 120 -pattern_type glob -i '*.jpg' -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" out120.mp4
+
+echo "Removing temp output files"
+COUNTER=0
+CURRENT_FILE="${JPG_FILE}"
+while [  ${COUNTER} -lt ${ITERATION_COUNT} ]; do
+	let FILE_COUNTER=COUNTER+100000
+	OUTPUT_FILE="`basename ${JPG_FILE} .jpg`${FILE_COUNTER}.jpg"	
+	rm "${OUTPUT_FILE}"
+	let COUNTER=COUNTER+1
+done
 
 exit 0
